@@ -1,0 +1,1 @@
+export default function Button({ children, ...rest }){ return <button {...rest} className={`px-4 py-2 rounded bg-barca-500 text-white ${rest.className||''}`}>{children}</button> }

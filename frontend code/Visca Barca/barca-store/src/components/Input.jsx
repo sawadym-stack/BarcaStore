@@ -1,0 +1,1 @@
+export default function Input(props){ return <input {...props} className={`p-2 border rounded ${props.className||''}`} /> }

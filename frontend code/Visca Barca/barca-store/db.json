@@ -1,0 +1,1219 @@
+{
+  "users": [
+    {
+      "cart": [
+        {
+          "category": "jeysey",
+          "description": "high quality",
+          "gender": "male",
+          "id": 135,
+          "img": "https://static1.cdn-subsidesports.com/2/media/resized/wysiwyg/180_180//archive/pre20/BarcaHSS1415b-No10.gif",
+          "name": "Messi 2015 Home Kit",
+          "price": 4999,
+          "qty": 1,
+          "selectedSize": "S",
+          "stock": 12
+        }
+      ],
+      "createdAt": "2025-11-08T10:20:00Z",
+      "email": "admin@barca.com",
+      "id": 1,
+      "name": "Admin",
+      "password": "admin123",
+      "role": "admin",
+      "status": "Active",
+      "wishlist": [
+        {
+          "description": "Official 2025 home kit.",
+          "id": 101,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa7ILiJJKCMSgtnwgYF0q4uxXA-TdBtvTiMg\u0026s",
+          "name": "2025 Home Jersey",
+          "price": 4999,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "cart": [],
+      "createdAt": "2025-11-08T10:20:00Z",
+      "email": "sawad@barca.com",
+      "id": 3,
+      "name": "Sawad Ym",
+      "password": "sawad123",
+      "role": "customer",
+      "status": "Active",
+      "wishlist": []
+    },
+    {
+      "cart": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 2,
+          "selectedSize": "M",
+          "stock": 10
+        },
+        {
+          "category": "caps",
+          "description": "Retro red edition cap with Barça crest.",
+          "id": 104,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP3GZMuRStkp_GsDCcxOjforO6No-vj0T99Q\u0026s",
+          "name": "Barca Retro Red Cap",
+          "price": 1899,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 18
+        },
+        {
+          "category": "Home Kit",
+          "gender": "men",
+          "id": 110,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHOG1nOp6SsXLQKcfw1dl2UODL1PJCS7b3Tg\u0026s",
+          "name": "F.C. Barcelona 2025/26 Home Stadium FullSet",
+          "price": 5995,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 6
+        },
+        {
+          "category": "caps",
+          "description": "Limited edition black Barça cap.",
+          "id": 106,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpWquQDhl0WwThIdek9qtXTWEbH7Ae8uJipg\u0026s",
+          "name": "Barça Black Limited Cap",
+          "price": 2499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 9
+        },
+        {
+          "category": "caps",
+          "description": "New Era premium blue Barça cap.",
+          "id": 105,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJloeFW1iwklVHa7Ziv3-AUyigSPjma7tm6Q\u0026s",
+          "name": "New Era Blue Edition Cap",
+          "price": 2299,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 12
+        },
+        {
+          "category": "jerseys",
+          "description": "Official 24/25 home jersey with PEDRI 8.",
+          "id": 107,
+          "img": "https://footballmonk.in/wp-content/uploads/2025/09/FC-Barcelona-Home-Pedri-2025-26-Jersey-1.jpg",
+          "name": "Pedri Home Jersey 24/25",
+          "price": 4999,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 13
+        },
+        {
+          "category": "jerseys",
+          "gender": "men",
+          "id": 111,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKRkimdiG0uoJgMbzvxPs8Mjb98b4xgjTa4A\u0026s",
+          "name": "F.C. Barcelona 2025/26 Third Replica Jersey",
+          "price": 4695,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 5
+        },
+        {
+          "category": "Jerseys",
+          "gender": "Men",
+          "id": 121,
+          "image_url": "https://images.squarespace-cdn.com/content/v1/6535b8ee271ea56714f48e49/7e9d839a-5260-4c77-9d2a-db5737af84a2/Screenshot%2B2023-10-28%2B013401.png?format=1000w",
+          "name": "Barcelona Heritage Jersey",
+          "price": 1899,
+          "qty": 1,
+          "selectedSize": "XL",
+          "stock": 3
+        },
+        {
+          "category": "jersey",
+          "description": "Exellent Quality",
+          "gender": "male",
+          "id": 136,
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/81iwQs5VjRL._AC_UL600_SR600,600_.jpg",
+          "name": "Neymar 2015 Home Kit",
+          "price": 7999,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 3
+        }
+      ],
+      "createdAt": "2025-11-08T10:20:00Z",
+      "email": "shahana@gmail.com",
+      "id": 4,
+      "name": "shahana 123",
+      "password": "shahana1123",
+      "role": "user",
+      "status": "Active",
+      "wishlist": [
+        {
+          "category": "jeysey",
+          "description": "high quality",
+          "gender": "male",
+          "id": 135,
+          "img": "https://static1.cdn-subsidesports.com/2/media/resized/wysiwyg/180_180//archive/pre20/BarcaHSS1415b-No10.gif",
+          "name": "Messi 2015 Home Kit",
+          "price": 4999,
+          "stock": 12
+        }
+      ]
+    },
+    {
+      "cart": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        },
+        {
+          "category": "caps",
+          "description": "Official Barça New Era navy cap.",
+          "id": 103,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTwLT-iEv3bnYDVF39e1sltfeD_WMrnFmZDg\u0026s",
+          "name": "FC Barcelona Navy Cap",
+          "price": 1999,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 7
+        },
+        {
+          "category": "caps",
+          "description": "Limited edition black Barça cap.",
+          "id": 106,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpWquQDhl0WwThIdek9qtXTWEbH7Ae8uJipg\u0026s",
+          "name": "Barça Black Limited Cap",
+          "price": 2499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 9
+        }
+      ],
+      "createdAt": "2025-11-08T10:20:00Z",
+      "email": "niyas@gmail.com",
+      "id": 5,
+      "name": "niyas 123",
+      "password": "12345",
+      "role": "user",
+      "status": "Suspended",
+      "wishlist": []
+    },
+    {
+      "cart": [],
+      "email": "miya@gmail.com",
+      "id": 7,
+      "name": "fahmiya musthafa",
+      "password": "miyamiya",
+      "role": "user",
+      "status": "Active",
+      "wishlist": []
+    },
+    {
+      "cart": [],
+      "email": "shahana",
+      "id": 8,
+      "name": "rena k",
+      "password": "12345",
+      "role": "user",
+      "wishlist": []
+    },
+    {
+      "cart": [],
+      "email": "rena@gmail.com",
+      "id": 9,
+      "name": "rena rena",
+      "password": "12345",
+      "role": "user",
+      "wishlist": []
+    }
+  ],
+  "products": [
+    {
+      "id": 101,
+      "name": "2025 Home Jersey",
+      "price": 4999,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa7ILiJJKCMSgtnwgYF0q4uxXA-TdBtvTiMg\u0026s",
+      "description": "Official 2025 home kit.",
+      "stock": 15,
+      "category": "",
+      "gender": ""
+    },
+    {
+      "id": 102,
+      "name": "Training Jacket",
+      "price": 3499,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+      "description": "Warm and stylish.",
+      "stock": 10,
+      "category": "",
+      "gender": ""
+    },
+    {
+      "id": 103,
+      "name": "FC Barcelona Navy Cap",
+      "price": 1999,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTwLT-iEv3bnYDVF39e1sltfeD_WMrnFmZDg\u0026s",
+      "description": "Official Barça New Era navy cap.",
+      "stock": 7,
+      "category": "caps",
+      "gender": ""
+    },
+    {
+      "id": 104,
+      "name": "Barca Retro Red Cap",
+      "price": 1899,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP3GZMuRStkp_GsDCcxOjforO6No-vj0T99Q\u0026s",
+      "description": "Retro red edition cap with Barça crest.",
+      "stock": 18,
+      "category": "caps",
+      "gender": ""
+    },
+    {
+      "id": 105,
+      "name": "New Era Blue Edition Cap",
+      "price": 2299,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJloeFW1iwklVHa7Ziv3-AUyigSPjma7tm6Q\u0026s",
+      "description": "New Era premium blue Barça cap.",
+      "stock": 12,
+      "category": "caps",
+      "gender": ""
+    },
+    {
+      "id": 106,
+      "name": "Barça Black Limited Cap",
+      "price": 2499,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpWquQDhl0WwThIdek9qtXTWEbH7Ae8uJipg\u0026s",
+      "description": "Limited edition black Barça cap.",
+      "stock": 9,
+      "category": "caps",
+      "gender": ""
+    },
+    {
+      "id": 107,
+      "name": "Pedri Home Jersey 24/25",
+      "price": 4999,
+      "img": "https://footballmonk.in/wp-content/uploads/2025/09/FC-Barcelona-Home-Pedri-2025-26-Jersey-1.jpg",
+      "description": "Official 24/25 home jersey with PEDRI 8.",
+      "stock": 13,
+      "category": "jerseys",
+      "gender": ""
+    },
+    {
+      "id": 108,
+      "name": "Lewandowski Home Jersey 24/25",
+      "price": 4999,
+      "img": "https://m.media-amazon.com/images/I/412ZoNncldL._AC_.jpg",
+      "description": "Official 24/25 home jersey with LEWANDOWSKI 9.",
+      "stock": 11,
+      "category": "jerseys",
+      "gender": ""
+    },
+    {
+      "id": 109,
+      "name": "Gavi Home Jersey 24/25",
+      "price": 4999,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzE-24ADfatC5mmkzVhB1pLlBT-xbxTuyQvg\u0026s",
+      "description": "Official 24/25 home jersey with GAVI 6.",
+      "stock": 8,
+      "category": "jerseys",
+      "gender": ""
+    },
+    {
+      "id": 110,
+      "name": "F.C. Barcelona 2025/26 Home Stadium FullSet",
+      "price": 5995,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHOG1nOp6SsXLQKcfw1dl2UODL1PJCS7b3Tg\u0026s",
+      "description": "",
+      "stock": 6,
+      "category": "Home Kit",
+      "gender": "men"
+    },
+    {
+      "id": 111,
+      "name": "F.C. Barcelona 2025/26 Third Replica Jersey",
+      "price": 4695,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKRkimdiG0uoJgMbzvxPs8Mjb98b4xgjTa4A\u0026s",
+      "description": "",
+      "stock": 5,
+      "category": "jerseys",
+      "gender": "men"
+    },
+    {
+      "id": 113,
+      "name": "F.C. Barcelona Club Dri-FIT Cap",
+      "price": 1137,
+      "img": "https://static.nike.com/a/images/t_default/856aa2d9-42a5-46cb-a038-e3005a076392/FCB+U+NK+DF+CLUB+CAP+US+CB+L.png",
+      "description": "",
+      "stock": 21,
+      "category": "caps",
+      "gender": "unisex"
+    },
+    {
+      "id": 114,
+      "name": "F.C. Barcelona Nike Football T-Shirt",
+      "price": 1795,
+      "img": "https://thumblr.uniid.it/product/196923/1d278a73c2f0.jpg",
+      "description": "",
+      "stock": 20,
+      "category": "t-shirts",
+      "gender": "men"
+    },
+    {
+      "id": 115,
+      "name": "Barcelona 1996-97 Away Retro Shirt",
+      "price": 749,
+      "image_url": "https://msretro.com/cdn/shop/files/D2D66C0E-E53B-408F-AF3F-C2D2812D3865.jpg?v=1731512386\u0026width=1946",
+      "description": "",
+      "stock": 5,
+      "category": "Jerseys",
+      "gender": "Men"
+    },
+    {
+      "id": 116,
+      "name": "Barcelona 2005-06 Home Retro Shirt (Long Sleeve)",
+      "price": 999,
+      "image_url": "https://msretro.com/cdn/shop/files/11293E54-D12B-444A-AD45-63067E625BC9.jpg?v=1742119255\u0026width=533",
+      "description": "",
+      "stock": 4,
+      "category": "Jerseys",
+      "gender": "Men"
+    },
+    {
+      "id": 117,
+      "name": "FC Barcelona Home 2024-25 Kit (Full Set)",
+      "price": 1099,
+      "image_url": "https://fulltimestore.in/cdn/shop/files/barcelonahomeset2024-25.jpg?v=1730391493",
+      "description": "",
+      "stock": 22,
+      "category": "Jerseys",
+      "gender": "Men"
+    },
+    {
+      "id": 118,
+      "name": "FC Barcelona Away 2024-25 Stadium Kit (Full Sleeves)",
+      "price": 1149,
+      "image_url": "https://images.footballfanatics.com/barcelona/barcelona-nike-goalkeeper-stadium-shirt-long-sleeve-2023-24_ss5_p-13386620+pv-2+u-p4xub6wbzsukqyyfvput+v-ypblni7hsvtcjxievw5o.jpg?_hv=2\u0026w=900",
+      "description": "",
+      "stock": 17,
+      "category": "Jerseys",
+      "gender": "Men"
+    },
+    {
+      "id": 121,
+      "name": "Barcelona Heritage Jersey",
+      "price": 1899,
+      "image_url": "https://images.squarespace-cdn.com/content/v1/6535b8ee271ea56714f48e49/7e9d839a-5260-4c77-9d2a-db5737af84a2/Screenshot%2B2023-10-28%2B013401.png?format=1000w",
+      "description": "",
+      "stock": 3,
+      "category": "Jerseys",
+      "gender": "Men"
+    },
+    {
+      "id": 122,
+      "name": "Barcelona Matchday Scarf",
+      "price": 799,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTveY8IEfN2g-bX-TQ59oehaOhWtbqdRYg1uA\u0026s",
+      "description": "",
+      "stock": 9,
+      "category": "Accessories",
+      "gender": "Unisex"
+    },
+    {
+      "id": 123,
+      "name": "FC Barcelona Stadium Backpack",
+      "price": 2399,
+      "image_url": "https://thumblr.uniid.it/product/218443/32118dd4f50d.jpg?width=3840\u0026format=webp\u0026q=75",
+      "description": "",
+      "stock": 13,
+      "category": "Accessories",
+      "gender": "Unisex"
+    },
+    {
+      "id": 124,
+      "name": "Barcelona Sleeveless Training Tee",
+      "price": 1395,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-HHZlmzF-y1peURFL32IWmILSak-sGiYwdA\u0026s",
+      "description": "",
+      "stock": 2,
+      "category": "T-Shirts",
+      "gender": "Men"
+    },
+    {
+      "id": 125,
+      "name": "FC Barcelona Youth Home Kit",
+      "price": 2599,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUAsW_3ZyS201SqMeniqTD-V1KFdjyTLjTQ\u0026s",
+      "description": "",
+      "stock": 25,
+      "category": "Jerseys",
+      "gender": "Kids"
+    },
+    {
+      "id": 126,
+      "name": "Barcelona Midlayer Drill Top",
+      "price": 3199,
+      "image_url": "https://thumblr.uniid.it/product/150902/2c21a37a9b5d.jpg?width=3840\u0026format=webp\u0026q=75",
+      "description": "",
+      "stock": 18,
+      "category": "Training",
+      "gender": "Men"
+    },
+    {
+      "id": 127,
+      "name": "Barcelona Heritage Cap",
+      "price": 1499,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgiQZAR_EaTH78WUL5bAVckhDepJkpRccoPg\u0026s",
+      "description": "",
+      "stock": 14,
+      "category": "Caps",
+      "gender": "Unisex"
+    },
+    {
+      "id": 128,
+      "name": "Barcelona Full-Zip Hoodie",
+      "price": 3999,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVLm2NdwQPj4iQVN0M9zM5mEnhPr2jZSLsdA\u0026s",
+      "description": "",
+      "stock": 10,
+      "category": "Jackets",
+      "gender": "Men"
+    },
+    {
+      "id": 129,
+      "name": "Barcelona Performance Shorts",
+      "price": 1895,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsq5i_4vkMieBp-5YcyRXSZnxPrKBv-Lt2hw\u0026s",
+      "description": "",
+      "stock": 6,
+      "category": "Pants",
+      "gender": "Men"
+    },
+    {
+      "id": 130,
+      "name": "Barcelona Women's Replica Jersey",
+      "price": 2999,
+      "image_url": "https://soccerzoneusa.com/cdn/shop/files/preview-114_7204eeeb-dd3a-47b9-a36c-6af79c3556c4_2000x.webp?v=1691178846",
+      "description": "",
+      "stock": 10,
+      "category": "Jerseys",
+      "gender": "Women"
+    },
+    {
+      "id": 131,
+      "name": "Home Kit 25/26 –  Yamal Edition",
+      "price": 9500,
+      "img": "https://fulltimestore.in/cdn/shop/files/2ee0398905b976bbeac04c869bf55ab2e3b3635efaf22280b68be2d826dbca8f.jpg?v=1754339293",
+      "description": "Premium home kit with advanced fabric. Designed for Yamal fans.",
+      "stock": 0,
+      "category": "Home Kit",
+      "gender": ""
+    },
+    {
+      "id": 132,
+      "name": "Home Kit 25/26 – Pedri Edition",
+      "price": 9100,
+      "img": "https://footballmonk.in/wp-content/uploads/2025/09/FC-Barcelona-Home-Pedri-2025-26-Jersey-1.jpg",
+      "description": "Limited edition Pedri 25/26 kit with performance material.",
+      "stock": 3,
+      "category": "Home Kit",
+      "gender": ""
+    },
+    {
+      "id": 133,
+      "name": "Home Kit 25/26 – Classic Edition",
+      "price": 8700,
+      "img": "https://www.protechkitzone.com/image/cache/data/2025-26%20Jerseys/La%20Liga/FC%20Barcelona/FC-Barcelona-2526-Home-Shirt-700x700.jpg",
+      "description": "Classic 25/26 kit celebrating FC Barcelona heritage.",
+      "stock": 5,
+      "category": "Home Kit",
+      "gender": ""
+    },
+    {
+      "id": 134,
+      "name": "Home Kit 25/26 – Women’s Version",
+      "price": 10500,
+      "img": "https://cdn.media.amplience.net/i/frasersdev/62316918_o?fmt=auto\u0026upscale=false\u0026w=767\u0026h=767\u0026sm=scaleFit\u0026$h-ttl$",
+      "description": "Tailored for female fans. Premium 2025/26 Barça home kit.",
+      "stock": 7,
+      "category": "Home Kit",
+      "gender": ""
+    },
+    {
+      "id": 135,
+      "name": "Messi 2015 Home Kit",
+      "price": 4999,
+      "img": "https://static1.cdn-subsidesports.com/2/media/resized/wysiwyg/180_180//archive/pre20/BarcaHSS1415b-No10.gif",
+      "description": "high quality",
+      "stock": 12,
+      "category": "jersey",
+      "gender": "male"
+    },
+    {
+      "id": 136,
+      "name": "Neymar 2015 Home Kit",
+      "price": 7999,
+      "img": "https://images-eu.ssl-images-amazon.com/images/I/81iwQs5VjRL._AC_UL600_SR600,600_.jpg",
+      "description": "Exellent Quality",
+      "stock": 3,
+      "category": "jersey",
+      "gender": "male"
+    },
+    {
+      "id": 137,
+      "name": "UCL Men's fourth jersey 25/26 FC Barcelona - Player's Edition",
+      "price": 5999,
+      "img": "https://store.fcbarcelona.com/cdn/shop/files/15_94c2120f-2a60-4a26-a00a-cbae1b986211.jpg?v=1763631584\u0026width=1200",
+      "description": "",
+      "stock": 6,
+      "category": "jersey",
+      "gender": "Male"
+    },
+    {
+      "id": 138,
+      "name": "LAMINE YAMAL | UCL Men's fourth jersey 25/26 FC Barcelona - Player's Edition",
+      "price": 5999,
+      "img": "https://store.fcbarcelona.com/cdn/shop/files/AURORA_FZ1311-432_PHSYD001-2000.jpg?v=1763631584\u0026width=1200",
+      "description": "",
+      "stock": 6,
+      "category": "jersey",
+      "gender": "Male"
+    },
+    {
+      "id": 139,
+      "name": "Baby's home kit FC Barcelona 25/26",
+      "price": 3999,
+      "img": "https://store.fcbarcelona.com/cdn/shop/files/HJ5637-456_415094673_D_A_1X1_b3cee2e6-8bc8-4779-9af0-0f078bb73d18.jpg?v=1751430268\u0026width=1200",
+      "description": "",
+      "stock": 14,
+      "category": "Kids",
+      "gender": "Male"
+    }
+  ],
+  "orders": [
+    {
+      "createdAt": "2025-12-15T09:45:29.204Z",
+      "id": 1,
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "COD",
+      "shipping": {
+        "address": "",
+        "city": "",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "",
+        "pincode": "",
+        "state": ""
+      },
+      "status": "Pending",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-15T09:50:02.424Z",
+      "id": 2,
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "COD",
+      "shipping": {
+        "address": "",
+        "city": "",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "",
+        "pincode": "",
+        "state": ""
+      },
+      "status": "Delivered",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-15T09:58:35.504Z",
+      "id": 3,
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Delivered",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-15T10:05:48.688Z",
+      "id": 4,
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Delivered",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-15T10:06:32.603Z",
+      "id": 5,
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Confirmed",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-15T10:08:05.788Z",
+      "id": 6,
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "8157081405",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Delivered",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-15T10:08:46.531Z",
+      "id": 7,
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Cancelled",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-15T10:10:16.146Z",
+      "id": 8,
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Pending",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-15T11:46:03.449Z",
+      "id": "FCB1765799163449",
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Confirmed",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-15T12:27:18.419Z",
+      "id": "FCB1765801638419",
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Delivered",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-16T10:32:23.502Z",
+      "id": "FCB1765881143502",
+      "items": [
+        {
+          "category": "Home Kit",
+          "description": "Classic 25/26 kit celebrating FC Barcelona heritage.",
+          "id": 133,
+          "img": "https://www.protechkitzone.com/image/cache/data/2025-26%20Jerseys/La%20Liga/FC%20Barcelona/FC-Barcelona-2526-Home-Shirt-700x700.jpg",
+          "name": "Home Kit 25/26 – Classic Edition",
+          "price": 8700,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 5
+        },
+        {
+          "category": "caps",
+          "description": "Official Barça New Era navy cap.",
+          "id": 103,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTwLT-iEv3bnYDVF39e1sltfeD_WMrnFmZDg\u0026s",
+          "name": "FC Barcelona Navy Cap",
+          "price": 1999,
+          "qty": 2,
+          "selectedSize": "M",
+          "stock": 7
+        },
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 2,
+          "selectedSize": "M",
+          "stock": 10
+        },
+        {
+          "category": "caps",
+          "description": "Retro red edition cap with Barça crest.",
+          "id": 104,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP3GZMuRStkp_GsDCcxOjforO6No-vj0T99Q\u0026s",
+          "name": "Barca Retro Red Cap",
+          "price": 1899,
+          "qty": 2,
+          "selectedSize": "M",
+          "stock": 18
+        },
+        {
+          "category": "Home Kit",
+          "gender": "men",
+          "id": 110,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHOG1nOp6SsXLQKcfw1dl2UODL1PJCS7b3Tg\u0026s",
+          "name": "F.C. Barcelona 2025/26 Home Stadium FullSet",
+          "price": 5995,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 6
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Pending",
+      "subtotal": 29489,
+      "tax": 5308,
+      "total": 34797,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-16T10:36:26.716Z",
+      "id": "FCB1765881386716",
+      "items": [
+        {
+          "description": "Official 2025 home kit.",
+          "id": 101,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa7ILiJJKCMSgtnwgYF0q4uxXA-TdBtvTiMg\u0026s",
+          "name": "2025 Home Jersey",
+          "price": 4999,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 15
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Pending",
+      "subtotal": 4999,
+      "tax": 900,
+      "total": 5899,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-16T10:37:24.138Z",
+      "id": "FCB1765881444138",
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Pending",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-16T10:42:20.151Z",
+      "id": "FCB1765881740151",
+      "items": [
+        {
+          "category": "caps",
+          "description": "Official Barça New Era navy cap.",
+          "id": 103,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTwLT-iEv3bnYDVF39e1sltfeD_WMrnFmZDg\u0026s",
+          "name": "FC Barcelona Navy Cap",
+          "price": 1999,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 7
+        },
+        {
+          "category": "jerseys",
+          "description": "Official 24/25 home jersey with GAVI 6.",
+          "id": 109,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzE-24ADfatC5mmkzVhB1pLlBT-xbxTuyQvg\u0026s",
+          "name": "Gavi Home Jersey 24/25",
+          "price": 4999,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 8
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Pending",
+      "subtotal": 6998,
+      "tax": 1260,
+      "total": 8258,
+      "userId": 4
+    },
+    {
+      "createdAt": "2025-12-16T10:49:12.008Z",
+      "id": "FCB1765882152008",
+      "items": [
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "shahana@gmail.com",
+        "name": "shahana 123",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Pending",
+      "subtotal": 3499,
+      "tax": 630,
+      "total": 4129,
+      "userId": 4
+    },
+    {
+      "createdAt": "2026-01-05T03:51:25.536Z",
+      "id": "FCB1767585085536",
+      "items": [
+        {
+          "category": "Home Kit",
+          "description": "Limited edition Pedri 25/26 kit with performance material.",
+          "id": 132,
+          "img": "https://footballmonk.in/wp-content/uploads/2025/09/FC-Barcelona-Home-Pedri-2025-26-Jersey-1.jpg",
+          "name": "Home Kit 25/26 – Pedri Edition",
+          "price": 9100,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 3
+        },
+        {
+          "category": "jersey",
+          "description": "Exellent Quality",
+          "gender": "male",
+          "id": 136,
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/81iwQs5VjRL._AC_UL600_SR600,600_.jpg",
+          "name": "Neymar 2015 Home Kit",
+          "price": 7999,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 3
+        },
+        {
+          "category": "caps",
+          "description": "Official Barça New Era navy cap.",
+          "id": 103,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTwLT-iEv3bnYDVF39e1sltfeD_WMrnFmZDg\u0026s",
+          "name": "FC Barcelona Navy Cap",
+          "price": 1999,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 7
+        },
+        {
+          "category": "Jerseys",
+          "gender": "Men",
+          "id": 118,
+          "image_url": "https://images.footballfanatics.com/barcelona/barcelona-nike-goalkeeper-stadium-shirt-long-sleeve-2023-24_ss5_p-13386620+pv-2+u-p4xub6wbzsukqyyfvput+v-ypblni7hsvtcjxievw5o.jpg?_hv=2\u0026w=900",
+          "name": "FC Barcelona Away 2024-25 Stadium Kit (Full Sleeves)",
+          "price": 1149,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 17
+        },
+        {
+          "description": "Warm and stylish.",
+          "id": 102,
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-BDJBIaWFCI2-oNy5j3t1M2lGEFSxo6n9Q\u0026s",
+          "name": "Training Jacket",
+          "price": 3499,
+          "qty": 1,
+          "selectedSize": "M",
+          "stock": 10
+        }
+      ],
+      "payment": "Cash on Delivery",
+      "shipping": {
+        "address": "shahana pattambi(h)",
+        "city": "univercity of calicut",
+        "country": "India",
+        "email": "rena@gmail.com",
+        "name": "rena rena",
+        "phone": "9526659669",
+        "pincode": "123456",
+        "state": "kerla"
+      },
+      "status": "Pending",
+      "subtotal": 23746,
+      "tax": 4274,
+      "total": 28020,
+      "userId": 9
+    }
+  ]
+}
