@@ -510,7 +510,7 @@ export const deleteUser = async (id) => {
 };
 
 export const getOrders = async () => {
-  const res = await fetchWithAuth(`${API_BASE}/admin/orders`);
+  const res = await fetchWithAuth(`${API_BASE}/admin/orders?limit=1000`);
   return await res.json();
 };
 
@@ -586,6 +586,11 @@ export const applyCoupon = async (code, subtotal) => {
 
 export const getCoupons = async () => {
   const res = await fetchWithAuth(`${API_BASE}/admin/coupons`);
+  return await res.json();
+};
+
+export const getPublicCoupons = async () => {
+  const res = await fetch(`${API_BASE}/coupons`);
   return await res.json();
 };
 

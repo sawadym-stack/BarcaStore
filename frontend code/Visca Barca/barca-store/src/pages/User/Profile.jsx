@@ -20,7 +20,8 @@ import {
   XCircle,
   ArrowRight,
   Package,
-  FileText
+  FileText,
+  Tag
 } from "lucide-react";
 import { toast } from "react-toastify";
 import ReviewModal from "../../components/ReviewModal";
@@ -43,6 +44,7 @@ export default function Profile() {
   const [existingReview, setExistingReview] = useState(null);
   const [isReturnModalOpen, setReturnModalOpen] = useState(false);
   const [returnItem, setReturnItem] = useState(null);
+  const [coupons, setCoupons] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -68,6 +70,7 @@ export default function Profile() {
     if (user) {
       api.getOrdersByUser().then(setOrders).catch(console.error);
       api.getAddresses().then(setAddresses).catch(console.error);
+      api.getPublicCoupons().then(allcp => setCoupons((allcp || []).filter(c => c.is_active))).catch(console.error);
     }
   }, [user]);
 
@@ -268,6 +271,7 @@ export default function Profile() {
                 {activeTab === "profile" && <>PROFILE <span className="text-white/20">INFO</span></>}
                 {activeTab === "orders" && <>ACQUISITION <span className="text-white/20">HISTORY</span></>}
                 {activeTab === "addresses" && <>SECTOR <span className="text-white/20">LOGISTICS</span></>}
+                {activeTab === "coupons" && <>ACTIVE <span className="text-white/20">PROTOCOLS</span></>}
               </h1>
             </div>
             
@@ -299,7 +303,8 @@ export default function Profile() {
               {[
                 { id: "profile", label: "Identity Matrix", icon: <User size={18} /> },
                 { id: "orders", label: "Acquisitions", icon: <ShoppingBag size={18} /> },
-                { id: "addresses", label: "Logistics Coordinates", icon: <MapPin size={18} /> }
+                { id: "addresses", label: "Logistics Coordinates", icon: <MapPin size={18} /> },
+                { id: "coupons", label: "Active Protocols", icon: <Tag size={18} /> }
               ].map(tab => (
                 <button
                   key={tab.id}
@@ -571,6 +576,42 @@ export default function Profile() {
                              </div>
                           ))}
                        </div>
+                    )}
+                 </div>
+               )}
+
+               {/* ================= PROTOCOLS (COUPONS) ================= */}
+               {activeTab === "coupons" && (
+                 <div className="space-y-8 animate-in fade-in slide-in-from-right-8 duration-500">
+                    {coupons.length === 0 ? (
+                       <div className="bg-[#111836]/60 backdrop-blur-2xl border border-white/10 rounded-[3rem] p-32 text-center space-y-6">
+                          <Tag size={48} className="mx-auto text-white/10" />
+                          <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20">No active protocols detected.</p>
+                       </div>
+                    ) : (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {coupons.map(c => (
+                          <div key={c.id} className="bg-[#111836]/60 backdrop-blur-2xl border border-white/10 rounded-[3rem] p-8 space-y-4 hover:border-yellow-400/50 transition-all group duration-300">
+                             <div className="flex items-start justify-between">
+                                <div className="bg-yellow-400/10 text-yellow-400 border border-yellow-400/20 px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest group-hover:bg-yellow-400 group-hover:text-black transition-all shadow-sm">
+                                   {c.code}
+                                </div>
+                                <Tag size={20} className="text-white/10 group-hover:text-yellow-400 transition-colors" />
+                             </div>
+                             <div>
+                                <p className="text-3xl font-black uppercase tracking-tighter text-white">
+                                   {c.discount_type === 'percentage' ? `${c.discount_value}% OFF` : `₹${c.discount_value} OFF`}
+                                </p>
+                                <p className="text-[10px] font-bold text-white/40 uppercase mt-2">
+                                   {c.minimum_order_amount > 0 ? `Valid on orders above ₹${c.minimum_order_amount}` : 'No minimum order value limits.'}
+                                </p>
+                                <p className="text-[9px] font-bold text-white/20 uppercase mt-1">
+                                   Expires: {new Date(c.expiry_date).toLocaleDateString()}
+                                </p>
+                             </div>
+                          </div>
+                        ))}
+                      </div>
                     )}
                  </div>
                )}

@@ -60,6 +60,7 @@ func NewRouter(userUC *user.Interactor, productUC *product.Interactor, cartUC *c
 	}
 
 	// Coupons public
+	router.GET("/api/coupons", couponHandler.ListCoupons)
 	router.POST("/api/coupons/apply", couponHandler.ApplyCoupon)
 
 	// Reviews public group

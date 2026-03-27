@@ -60,7 +60,7 @@ function Home() {
   };
 
   return (
-    <UserLayout>
+    <UserLayout isHero={true}>
       {/* HERO SECTION */}
       <section className="relative w-full h-screen overflow-hidden">
         {/* 🎥 VIDEO BACKGROUND */}
@@ -71,13 +71,12 @@ function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover brightness-[0.7] contrast-110 saturate-[1.1]"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-stadium-lights-and-atmosphere-at-night-4416-large.mp4" type="video/mp4" />
-          <source src="/barca-store-project-video.mp4" type="video/mp4" />
+          <source src="/barca_players_clips - Trim.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
         {/* 🎬 CINEMATIC OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#0A102E] flex flex-col justify-center items-center text-center px-4">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent flex flex-col justify-center items-center text-center px-4">
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight leading-none text-white drop-shadow-2xl">
              VISCA <br/>
              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-500">BARÇA</span>

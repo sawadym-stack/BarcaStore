@@ -405,13 +405,14 @@ func (i *Interactor) GetProfile(userID int64) (*UserResponse, error) {
 	}
 
 	return &UserResponse{
-		ID:        user.ID,
-		Email:     user.Email,
-		Name:      user.Name,
-		Role:      user.Role,
-		IsBlocked: user.IsBlocked,
-		Status:    status,
-		CreatedAt: user.CreatedAt,
+		ID:           user.ID,
+		Email:        user.Email,
+		Name:         user.Name,
+		Role:         user.Role,
+		IsBlocked:    user.IsBlocked,
+		Status:       status,
+		ProfilePhoto: user.ProfilePhoto,
+		CreatedAt:    user.CreatedAt,
 	}, nil
 }
 
@@ -448,13 +449,14 @@ func (i *Interactor) UpdateProfile(input UpdateProfileInput) (*UserResponse, err
 	}
 
 	return &UserResponse{
-		ID:        user.ID,
-		Email:     user.Email,
-		Name:      user.Name,
-		Role:      user.Role,
-		IsBlocked: user.IsBlocked,
-		Status:    status,
-		CreatedAt: user.CreatedAt,
+		ID:           user.ID,
+		Email:        user.Email,
+		Name:         user.Name,
+		Role:         user.Role,
+		IsBlocked:    user.IsBlocked,
+		Status:       status,
+		ProfilePhoto: user.ProfilePhoto,
+		CreatedAt:    user.CreatedAt,
 	}, nil
 }
 

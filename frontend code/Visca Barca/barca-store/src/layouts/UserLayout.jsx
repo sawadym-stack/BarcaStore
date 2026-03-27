@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 
-function UserLayout({ children }) {
+function UserLayout({ children, isHero = false }) {
   return (
     <div className="min-h-screen flex flex-col bg-[#0A102E] selection:bg-yellow-400 selection:text-black relative overflow-hidden">
       {/* GLOBAL CINEMATIC BACKGROUND GRADIENT */}
@@ -12,7 +12,7 @@ function UserLayout({ children }) {
       <Navbar />
 
       {/* OFFSET FOR FLOATING NAVBAR */}
-      <main className="flex-grow w-full pt-28 pb-12 relative">
+      <main className={`flex-grow w-full ${isHero ? "pt-0" : "pt-28"} pb-12 relative`}>
         {children}
       </main>
 

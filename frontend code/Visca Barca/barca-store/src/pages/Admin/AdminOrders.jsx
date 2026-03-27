@@ -172,8 +172,8 @@ export default function AdminOrders() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
            <StatusBox title="Pending Action" value={orders.filter(o => o.status === 'pending').length} icon={<Clock size={22}/>} color="from-amber-500 to-amber-700" />
            <StatusBox title="Confirmed" value={orders.filter(o => o.status === 'confirmed').length} icon={<CheckCircle size={22}/>} color="from-blue-600 to-blue-800" />
-           <StatusBox title="In Transit" value={orders.filter(o => o.status === 'shipped').length} icon={<Truck size={22}/>} color="from-indigo-600 to-indigo-800" />
-           <StatusBox title="Successful" value={orders.filter(o => o.status === 'delivered').length} icon={<Package size={22}/>} color="from-emerald-600 to-emerald-800" />
+           <StatusBox title="Shipped" value={orders.filter(o => (o.status || '').toLowerCase() === 'shipped').length} icon={<Truck size={22}/>} color="from-indigo-600 to-indigo-800" />
+           <StatusBox title="Delivered" value={orders.filter(o => (o.status || '').toLowerCase() === 'delivered').length} icon={<Package size={22}/>} color="from-emerald-600 to-emerald-800" />
         </div>
 
         {/* CONTROLS */}
@@ -193,7 +193,7 @@ export default function AdminOrders() {
                    <option value="all">Full Registry View</option>
                    <option value="pending">Pending Orders</option>
                    <option value="confirmed">Confirmed</option>
-                   <option value="shipped">In Transit</option>
+                   <option value="shipped">Shipped</option>
                    <option value="delivered">Delivered</option>
                    <option value="cancelled">Archive / Cancelled</option>
                  </select>
@@ -250,9 +250,9 @@ export default function AdminOrders() {
                       <select
                        value={(o.status || "pending").toLowerCase()}
                        onChange={(e) => updateStatus(o.id, e.target.value)}
-                       disabled={o.status === "cancelled"}
+                       disabled={(o.status || '').toLowerCase() === "cancelled"}
                        className={`appearance-none text-[10px] font-black uppercase pl-4 pr-10 py-2.5 rounded-2xl border-2 transition-all cursor-pointer outline-none shadow-md hover:scale-105 active:scale-95
-                         ${statusColors[o.status] || "bg-gray-100 text-gray-700"}
+                         ${statusColors[(o.status || '').toLowerCase()] || "bg-gray-100 text-gray-700"}
                        `}
                      >
                        {Object.keys(statusRanks).map(s => (
@@ -321,13 +321,13 @@ export default function AdminOrders() {
                          ) : (
                          <div className="relative group">
                             <select 
-                               value={selectedOrder.status} 
+                               value={(selectedOrder.status || '').toLowerCase()} 
                                onChange={(e) => updateStatus(selectedOrder.id, e.target.value)}
-                               disabled={selectedOrder.status === 'cancelled'}
+                               disabled={(selectedOrder.status || '').toLowerCase() === 'cancelled'}
                                className="text-white bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl pl-5 pr-12 py-3 text-xs font-black uppercase tracking-widest focus:ring-2 focus:ring-gold appearance-none w-full shadow-xl transition-all hover:bg-white/20"
                              >
                                {Object.keys(statusRanks).map(s => (
-                                 <option key={s} value={s} className="bg-blue-900" disabled={s !== 'cancelled' && statusRanks[s] < statusRanks[selectedOrder.status]}>{s}</option>
+                                 <option key={s} value={s} className="bg-blue-900" disabled={s !== 'cancelled' && statusRanks[s] < statusRanks[(selectedOrder.status || '').toLowerCase()]}>{s}</option>
                                ))}
                             </select>
                             <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity">

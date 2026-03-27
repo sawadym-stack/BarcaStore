@@ -5,7 +5,7 @@ import { StoreContext } from "../../contexts/StoreContext";
 import { AuthContext } from "../../contexts/AuthContext";
 import * as api from "../../api/api";
 import { useNavigate, Link } from "react-router-dom";
-import { MapPin, Lock, ArrowLeft, CreditCard, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { MapPin, Lock, ArrowLeft, CreditCard, ShieldCheck, CheckCircle2, Tag } from "lucide-react";
 
 export default function Checkout() {
   const { cart, clearCart } = useContext(StoreContext);
@@ -25,6 +25,7 @@ export default function Checkout() {
   const [appliedCoupon, setAppliedCoupon] = useState(null);
   const [addresses, setAddresses] = useState([]);
   const [selectedAddressId, setSelectedAddressId] = useState(null);
+  const [availableCoupons, setAvailableCoupons] = useState([]);
 
   useEffect(() => {
     if (user) {
@@ -32,6 +33,9 @@ export default function Checkout() {
         .then(setAddresses)
         .catch(console.error);
     }
+    api.getPublicCoupons()
+      .then(coupons => setAvailableCoupons((coupons || []).filter(c => c.is_active)))
+      .catch(console.error);
   }, [user]);
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
@@ -347,6 +351,31 @@ export default function Checkout() {
                        </div>
                        {appliedCoupon && <p className="text-[9px] font-black text-green-500 uppercase tracking-widest ml-4 italic">Protocol Activated</p>}
                     </div>
+
+                    {/* AVAILABLE COUPONS */}
+                    {availableCoupons.length > 0 && !appliedCoupon && (
+                       <div className="pt-2">
+                          <p className="text-[9px] font-black uppercase tracking-[0.2em] text-white/30 mb-3 px-1 border-b border-white/5 pb-2">Available Protocols</p>
+                          <div className="grid grid-cols-1 gap-2 max-h-40 overflow-y-auto custom-scrollbar pr-2">
+                             {availableCoupons.map(c => (
+                                <button
+                                   key={c.id}
+                                   onClick={() => setCouponCode(c.code)}
+                                   className="flex items-center justify-between p-4 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 hover:border-yellow-400/30 transition-all text-left group"
+                                >
+                                   <div>
+                                      <p className="text-[10px] font-black uppercase tracking-widest text-yellow-400 group-hover:text-yellow-300 shadow-sm">{c.code}</p>
+                                      <p className="text-[8px] font-bold text-white/50 uppercase mt-0.5">
+                                         {c.discount_type === 'percentage' ? `${c.discount_value}% OFF` : `₹${c.discount_value} OFF`}
+                                         {c.minimum_order_amount > 0 ? ` (MIN ₹${c.minimum_order_amount})` : ''}
+                                      </p>
+                                   </div>
+                                   <Tag size={12} className="text-white/20 group-hover:text-yellow-400 transition-colors" />
+                                </button>
+                             ))}
+                          </div>
+                       </div>
+                    )}
 
                     {/* TOTALS */}
                     <div className="space-y-4 pt-4 border-t border-white/5">

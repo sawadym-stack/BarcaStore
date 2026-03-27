@@ -16,28 +16,26 @@ import AdminProducts from './pages/Admin/Products'
 import AdminUsers from './pages/Admin/Users'
 
 import ProtectedRoute from './components/ProtectedRoute'
-import { Import } from 'lucide-react'
+import PublicRoute from './components/PublicRoute'
 import AdminOrders from './pages/Admin/AdminOrders'
 import AdminCoupons from './pages/Admin/AdminCoupons'
 
 export default function RoutesList() {
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/shop' element={<Shop />} />
-      <Route path='/product/:id' element={<ProductDetails />} />
-      <Route path="/checkout" element={<Checkout />} />
-      <Route path="/order-confirmed" element={<OrderConfirmed />} />
+      <Route path='/' element={<ProtectedRoute allowGuest={true}><Home /></ProtectedRoute>} />
+      <Route path='/shop' element={<ProtectedRoute allowGuest={true}><Shop /></ProtectedRoute>} />
+      <Route path='/product/:id' element={<ProtectedRoute allowGuest={true}><ProductDetails /></ProtectedRoute>} />
+      <Route path="/checkout" element={<ProtectedRoute role='user'><Checkout /></ProtectedRoute>} />
+      <Route path="/order-confirmed" element={<ProtectedRoute role='user'><OrderConfirmed /></ProtectedRoute>} />
 
+      <Route path='/login' element={<PublicRoute><Login /></PublicRoute>} />
+      <Route path='/register' element={<PublicRoute><Register /></PublicRoute>} />
+      <Route path='/forgot-password' element={<PublicRoute><ForgotPassword /></PublicRoute>} />
 
-
-      <Route path='/login' element={<Login />} />
-      <Route path='/register' element={<Register />} />
-      <Route path='/forgot-password' element={<ForgotPassword />} />
-
-      <Route path='/profile' element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-      <Route path='/cart' element={<ProtectedRoute><Cart /></ProtectedRoute>} />
-      <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
+      <Route path='/profile' element={<ProtectedRoute role='user'><Profile /></ProtectedRoute>} />
+      <Route path='/cart' element={<ProtectedRoute role='user'><Cart /></ProtectedRoute>} />
+      <Route path="/wishlist" element={<ProtectedRoute role='user'><Wishlist /></ProtectedRoute>} />
 
       <Route path='/admin' element={<ProtectedRoute role='admin'><AdminDashboard /></ProtectedRoute>} />
       <Route path='/admin/products' element={<ProtectedRoute role='admin'><AdminProducts /></ProtectedRoute>} />
