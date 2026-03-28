@@ -3,7 +3,7 @@ const API_BASE = "http://localhost:3000/api";
 export const API_ORIGIN = API_BASE.replace(/\/api\/?$/, "") || "http://localhost:3000";
 
 export const profilePhotoUrl = (path) => {
-  if (!path) return null;
+  if (!path || path === "" || path === "null") return null;
   if (path.startsWith("http")) return path;
   return `${API_ORIGIN}${path.startsWith("/") ? path : "/" + path}`;
 };
@@ -199,6 +199,15 @@ export const uploadProfilePhoto = async (file) => {
   });
   const data = await res.json();
   if (!res.ok) throw new Error(data.error || "Upload failed");
+  return data;
+};
+
+export const removeProfilePhoto = async () => {
+  const res = await fetchWithAuth(`${API_BASE}/user/profile-photo`, {
+    method: "DELETE",
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || "Removal failed");
   return data;
 };
 

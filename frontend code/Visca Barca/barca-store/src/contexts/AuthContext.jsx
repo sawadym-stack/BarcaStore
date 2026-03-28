@@ -23,7 +23,11 @@ function reducer(state, action) {
       return { ...state, status: "loading", error: null };
 
     case "loginSuccess":
-      return { ...state, status: "succeeded", user: action.payload };
+      return { 
+        ...state, 
+        status: "succeeded", 
+        user: state.user ? { ...state.user, ...action.payload } : action.payload 
+      };
 
     case "logout":
       return { ...state, user: null, status: "idle" };
@@ -59,7 +63,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const hydrate = async () => {
       const token = localStorage.getItem(TOKEN_KEY);
-      if (token && !state.user) {
+      if (token) {
         dispatch({ type: "pending" });
         try {
           const user = await api.getProfile();
@@ -75,18 +79,22 @@ export function AuthProvider({ children }) {
     hydrate();
   }, []);
 
+  /* ---------- ref for stable polling ---------- */
+  const userRef = React.useRef(state.user);
+  useEffect(() => { userRef.current = state.user; }, [state.user]);
+
   /* 
      SECURITY FEATURE: Session & Account Status Polling
      This effect runs every 10 seconds to sync the local user state with the backend.
      It ensures that:
      1. If an Admin suspends/blocks the user, they are kicked out of the app immediately.
      2. If the session token expires or is invalidated server-side, the user is redirected to login.
-     This is why you see periodic GET /api/user/profile requests in your network logs.
+     3. Profile photo/name changes are synced in the background.
+     Uses a ref to avoid re-creating the interval on every user state change.
   */
   useEffect(() => {
-    if (!state.user) return;
-
     const interval = setInterval(async () => {
+      if (!userRef.current) return;
       try {
         const latestUser = await api.getProfile();
 
@@ -94,6 +102,17 @@ export function AuthProvider({ children }) {
           logout();
           toast.error("Your account has been suspended.");
           window.location.href = "/login";
+        } else {
+          // Only dispatch if something actually changed
+          const cur = userRef.current;
+          const changed = 
+            cur.name !== latestUser.name ||
+            cur.email !== latestUser.email ||
+            cur.role !== latestUser.role ||
+            (cur.profile_photo || "") !== (latestUser.profile_photo || "");
+          if (changed) {
+            dispatch({ type: "loginSuccess", payload: latestUser });
+          }
         }
       } catch (err) {
         // If 401/403, it means token is invalid or blocked
@@ -105,7 +124,7 @@ export function AuthProvider({ children }) {
     }, 10000); // Check every 10 seconds
 
     return () => clearInterval(interval);
-  }, [state.user]);
+  }, []); // stable - no deps
 
   /* ================== AUTH ACTIONS ================== */
 

@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useEffect, useContext } from "react";
+import React, { createContext, useReducer, useEffect, useContext, useCallback, useMemo } from "react";
 import * as api from "../api/api";
 import { AuthContext } from "./AuthContext";
 
@@ -187,7 +187,7 @@ export function StoreProvider({ children }) {
     }
   }, [user]);
 
-  const syncWithDB = async () => {
+  const syncWithDB = useCallback(async () => {
     try {
       const cartData = await api.getCart();
       const wishlistData = await api.getWishlist();
@@ -218,37 +218,37 @@ export function StoreProvider({ children }) {
     } catch (err) {
       console.error("Failed to sync with DB:", err);
     }
-  };
+  }, [dispatch, user]);
 
   // ------------------------------------------------------------
   // PRODUCTS
   // ------------------------------------------------------------
 
-  const fetchProducts = async () => {
+  const fetchProducts = useCallback(async () => {
     const items = await api.getProducts();
     dispatch({ type: "setProducts", payload: items });
-  };
+  }, [dispatch]);
 
-  const addProduct = async (p) => {
+  const addProduct = useCallback(async (p) => {
     const product = await api.addProduct(p);
     dispatch({ type: "addProduct", payload: product });
-  };
+  }, [dispatch]);
 
-  const editProduct = async (id, data) => {
+  const editProduct = useCallback(async (id, data) => {
     const product = await api.updateProduct(id, data);
     dispatch({ type: "editProduct", payload: product });
-  };
+  }, [dispatch]);
 
-  const deleteProduct = async (id) => {
+  const deleteProduct = useCallback(async (id) => {
     await api.deleteProduct(id);
     dispatch({ type: "deleteProduct", payload: id });
-  };
+  }, [dispatch]);
 
   // ------------------------------------------------------------
   // CART & WISHLIST ACTIONS
   // ------------------------------------------------------------
 
-  const addToCart = async (p, selectedSize = "M") => {
+  const addToCart = useCallback(async (p, selectedSize = "M") => {
     if (user) {
       try {
         await api.addToCart({ product_id: p.id, quantity: 1, size: selectedSize });
@@ -260,9 +260,9 @@ export function StoreProvider({ children }) {
     } else {
       dispatch({ type: "addToCart", payload: { ...p, selectedSize } });
     }
-  };
+  }, [user, syncWithDB, dispatch]);
 
-  const removeFromCart = async (id, selectedSize) => {
+  const removeFromCart = useCallback(async (id, selectedSize) => {
     if (user) {
       try {
         const item = state.cart.find((i) => i.id === id && i.selectedSize === selectedSize);
@@ -276,9 +276,9 @@ export function StoreProvider({ children }) {
     } else {
       dispatch({ type: "removeFromCart", payload: { id, selectedSize } });
     }
-  };
+  }, [user, state.cart, syncWithDB, dispatch]);
 
-  const clearCart = async () => {
+  const clearCart = useCallback(async () => {
     if (user) {
       try {
         await api.clearCart();
@@ -289,9 +289,9 @@ export function StoreProvider({ children }) {
     } else {
       dispatch({ type: "clearCart" });
     }
-  };
+  }, [user]);
 
-  const increaseQty = async (id, selectedSize) => {
+  const increaseQty = useCallback(async (id, selectedSize) => {
     if (user) {
       try {
         const item = state.cart.find((i) => i.id === id && i.selectedSize === selectedSize);
@@ -305,9 +305,9 @@ export function StoreProvider({ children }) {
     } else {
       dispatch({ type: "increaseQty", payload: { id, selectedSize } });
     }
-  };
+  }, [user, state.cart, syncWithDB, dispatch]);
 
-  const decreaseQty = async (id, selectedSize) => {
+  const decreaseQty = useCallback(async (id, selectedSize) => {
     if (user) {
       try {
         const item = state.cart.find((i) => i.id === id && i.selectedSize === selectedSize);
@@ -325,9 +325,9 @@ export function StoreProvider({ children }) {
     } else {
       dispatch({ type: "decreaseQty", payload: { id, selectedSize } });
     }
-  };
+  }, [user, state.cart, syncWithDB, removeFromCart, dispatch]);
 
-  const updateCartItemSize = async (id, oldSize, newSize) => {
+  const updateCartItemSize = useCallback(async (id, oldSize, newSize) => {
     if (user) {
       try {
         const item = state.cart.find((i) => i.id === id && i.selectedSize === oldSize);
@@ -344,9 +344,9 @@ export function StoreProvider({ children }) {
         payload: { id, oldSize, newSize }
       });
     }
-  };
+  }, [user, state.cart, syncWithDB, dispatch]);
 
-  const addToWishlist = async (p) => {
+  const addToWishlist = useCallback(async (p) => {
     if (user) {
       try {
         await api.addToWishlist(p.id);
@@ -357,9 +357,9 @@ export function StoreProvider({ children }) {
     } else {
       dispatch({ type: "addToWishlist", payload: p });
     }
-  };
+  }, [user, syncWithDB, dispatch]);
 
-  const removeFromWishlist = async (id) => {
+  const removeFromWishlist = useCallback(async (id) => {
     if (user) {
       try {
         await api.removeFromWishlist(id);
@@ -371,38 +371,38 @@ export function StoreProvider({ children }) {
     } else {
       dispatch({ type: "removeFromWishlist", payload: id });
     }
-  };
+  }, [user, syncWithDB, dispatch]);
 
   // ------------------------------------------------------------
   // Provider
   // ------------------------------------------------------------
 
-  const logout = () => {
+  const logout = useCallback(() => {
     authLogout();                 // clears AuthContext + localStorage tokens
     // NOTE: We intentionally do NOT dispatch "clear" here.
     // Cart & wishlist stay in localStorage so they survive re-login.
-  };
+  }, [authLogout]);
+
+  const value = useMemo(() => ({
+    ...state,
+    user,
+    logout,
+    fetchProducts,
+    addProduct,
+    editProduct,
+    deleteProduct,
+    addToCart,
+    removeFromCart,
+    clearCart,
+    increaseQty,
+    decreaseQty,
+    updateCartItemSize,
+    addToWishlist,
+    removeFromWishlist
+  }), [state, user, logout, fetchProducts, addProduct, editProduct, deleteProduct, addToCart, removeFromCart, clearCart, increaseQty, decreaseQty, updateCartItemSize, addToWishlist, removeFromWishlist]);
 
   return (
-    <StoreContext.Provider
-      value={{
-        ...state,
-        user,
-        logout,
-        fetchProducts,
-        addProduct,
-        editProduct,
-        deleteProduct,
-        addToCart,
-        removeFromCart,
-        clearCart,
-        increaseQty,
-        decreaseQty,
-        updateCartItemSize,
-        addToWishlist,
-        removeFromWishlist
-      }}
-    >
+    <StoreContext.Provider value={value}>
       {children}
     </StoreContext.Provider>
   );

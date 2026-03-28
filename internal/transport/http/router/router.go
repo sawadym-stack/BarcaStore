@@ -77,6 +77,7 @@ func NewRouter(userUC *user.Interactor, productUC *product.Interactor, cartUC *c
 		protected.GET("/user/profile", authHandler.GetProfile)
 		protected.PUT("/user/profile", authHandler.UpdateProfile)
 		protected.POST("/user/profile-photo", authHandler.UploadProfilePhoto)
+		protected.DELETE("/user/profile-photo", authHandler.RemoveProfilePhoto)
 		protected.POST("/auth/logout", authHandler.Logout)
 
 		// Address routes

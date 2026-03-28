@@ -25,8 +25,8 @@ export default function OrderConfirmed() {
 
   return (
     <UserLayout>
-      <div className="min-h-screen bg-[#0A102E] text-white flex items-center justify-center py-20 px-6">
-        <div className="max-w-3xl w-full">
+      <div className="bg-[#0A102E] text-white py-12 sm:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
            
            {/* CINEMATIC SUCCESS HEADER */}
            <div className="text-center space-y-8 mb-16 animate-in fade-in zoom-in duration-700">

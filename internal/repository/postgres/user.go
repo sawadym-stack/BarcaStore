@@ -49,6 +49,7 @@ func (r *UserRepository) Update(user *entities.User) error {
 		"is_blocked":  user.IsBlocked,
 		"is_verified": user.IsVerified,
 		"role":        user.Role,
+		"profile_photo": user.ProfilePhoto,
 	})
 
 	if result.Error != nil {

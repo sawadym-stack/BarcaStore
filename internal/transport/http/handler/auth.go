@@ -376,3 +376,27 @@ func (h *AuthHandler) UploadProfilePhoto(c *gin.Context) {
 		ProfilePhoto: updated.ProfilePhoto,
 	})
 }
+
+// RemoveProfilePhoto removes user profile photo
+func (h *AuthHandler) RemoveProfilePhoto(c *gin.Context) {
+	userID, exists := c.Get("user_id")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, dto.ErrorResponse{Error: "user ID not found"})
+		return
+	}
+
+	updated, err := h.userUC.UpdateProfilePhoto(userID.(int64), "")
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, dto.ErrorResponse{Error: err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, dto.UserResponse{
+		ID:           updated.ID,
+		Email:        updated.Email,
+		Name:         updated.Name,
+		Role:         string(updated.Role),
+		Status:       updated.Status,
+		ProfilePhoto: updated.ProfilePhoto,
+	})
+}

@@ -1,5 +1,5 @@
 import UserLayout from "../../layouts/UserLayout";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import * as api from "../../api/api";
@@ -66,8 +66,10 @@ export default function Profile() {
 
   const [uploading, setUploading] = useState(false);
 
+  const hasFetchedData = useRef(false);
   useEffect(() => {
-    if (user) {
+    if (user && !hasFetchedData.current) {
+      hasFetchedData.current = true;
       api.getOrdersByUser().then(setOrders).catch(console.error);
       api.getAddresses().then(setAddresses).catch(console.error);
       api.getPublicCoupons().then(allcp => setCoupons((allcp || []).filter(c => c.is_active))).catch(console.error);
@@ -90,8 +92,13 @@ export default function Profile() {
     } catch (e) {}
   };
 
+  const [showPhotoOptions, setShowPhotoOptions] = useState(false);
+  const [showCamera, setShowCamera] = useState(false);
+  const videoRef = useRef(null);
+  const [stream, setStream] = useState(null);
+
   const handlePhotoUpload = async (e) => {
-    const file = e.target.files[0];
+    const file = e instanceof File ? e : e?.target?.files?.[0];
     if (!file) return;
 
     setUploading(true);
@@ -99,11 +106,63 @@ export default function Profile() {
       const updatedUser = await api.uploadProfilePhoto(file);
       setUser(updatedUser);
       toast.success("Identity Matrix Updated: Photo synchronized.");
+      setShowPhotoOptions(false);
+      if (showCamera) stopCamera();
     } catch (err) {
       toast.error(err.message);
     } finally {
       setUploading(false);
     }
+  };
+
+  const handleRemovePhoto = async () => {
+    if (!window.confirm("Purge identity visualization?")) return;
+    setUploading(true);
+    try {
+      const updatedUser = await api.removeProfilePhoto();
+      setUser(updatedUser);
+      toast.info("Identity visualization purged.");
+      setShowPhotoOptions(false);
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const startCamera = async () => {
+    setShowCamera(true);
+    try {
+      const s = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } });
+      setStream(s);
+      if (videoRef.current) videoRef.current.srcObject = s;
+    } catch (err) {
+      toast.error("Optical sensors inaccessible.");
+      setShowCamera(false);
+    }
+  };
+
+  const stopCamera = () => {
+    if (stream) {
+      stream.getTracks().forEach(track => track.stop());
+      setStream(null);
+    }
+    setShowCamera(false);
+  };
+
+  const capturePhoto = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    const canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(video, 0, 0);
+    
+    canvas.toBlob((blob) => {
+      const file = new File([blob], "capture.jpg", { type: "image/jpeg" });
+      handlePhotoUpload(file);
+    }, "image/jpeg", 0.9);
   };
 
   const handleCancelOrder = async (orderId) => {
@@ -284,10 +343,30 @@ export default function Profile() {
                         <User size={24} className="text-white/20" />
                     )}
                   </div>
-                  <label className="absolute -bottom-2 -right-2 bg-yellow-400 text-black p-2 rounded-xl cursor-pointer shadow-xl hover:scale-110 transition-transform">
+                  <button 
+                    onClick={() => setShowPhotoOptions(!showPhotoOptions)}
+                    className="absolute -bottom-2 -right-2 bg-yellow-400 text-black p-2 rounded-xl shadow-xl hover:scale-110 transition-transform z-10"
+                  >
                       <Camera size={12} />
-                      <input type="file" className="hidden" onChange={handlePhotoUpload} disabled={uploading} />
-                  </label>
+                  </button>
+
+                  {/* PHOTO OPTIONS MENU */}
+                  {showPhotoOptions && (
+                    <div className="absolute top-16 left-0 w-48 bg-[#1A2244] border border-white/10 rounded-2xl shadow-2xl py-2 z-50 animate-in fade-in zoom-in-95 duration-200">
+                       <button onClick={startCamera} className="w-full flex items-center gap-3 px-4 py-3 text-[10px] font-black uppercase tracking-widest text-white/70 hover:text-white hover:bg-white/5 transition-all">
+                          <Camera size={14} className="text-yellow-400" /> Take Photo
+                       </button>
+                       <label className="w-full flex items-center gap-3 px-4 py-3 text-[10px] font-black uppercase tracking-widest text-white/70 hover:text-white hover:bg-white/5 transition-all cursor-pointer">
+                          <Plus size={14} className="text-blue-400" /> Browse Files
+                          <input type="file" className="hidden" onChange={handlePhotoUpload} disabled={uploading} />
+                       </label>
+                       {getAvatarUrl() && (
+                         <button onClick={handleRemovePhoto} className="w-full flex items-center gap-3 px-4 py-3 text-[10px] font-black uppercase tracking-widest text-red-500/70 hover:text-red-500 hover:bg-red-500/5 transition-all">
+                            <Trash2 size={14} /> Remove Photo
+                         </button>
+                       )}
+                    </div>
+                  )}
                </div>
                <div>
                   <p className="text-xs font-black uppercase tracking-tight">{user.name}</p>
@@ -636,6 +715,42 @@ export default function Profile() {
            setOrders(updated);
         }}
       />
+
+      {/* CAMERA MODAL */}
+      {showCamera && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-xl p-6">
+           <div className="bg-[#0A102E] border border-white/10 rounded-[3rem] p-8 max-w-2xl w-full space-y-8 relative overflow-hidden">
+              <div className="flex items-center justify-between">
+                 <div className="space-y-1">
+                    <h3 className="text-xl font-black uppercase tracking-tight">Optical Capture</h3>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30">Personnel Identity synchronization</p>
+                 </div>
+                 <button onClick={stopCamera} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all">
+                    <XCircle size={20} className="text-white/40" />
+                 </button>
+              </div>
+
+              <div className="relative aspect-video bg-black rounded-[2rem] overflow-hidden border border-white/5 shadow-2xl">
+                 <video ref={videoRef} autoPlay playsInline className="w-full h-full object-cover" />
+                 <div className="absolute inset-0 border-[20px] border-black/20 pointer-events-none" />
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-yellow-400/20 rounded-full pointer-events-none animate-pulse" />
+              </div>
+
+              <div className="flex gap-4">
+                 <button 
+                  onClick={capturePhoto} 
+                  disabled={uploading}
+                  className="flex-1 bg-yellow-400 text-black py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] hover:bg-yellow-500 transition-all shadow-xl disabled:opacity-50"
+                 >
+                    {uploading ? 'Synchronizing...' : 'Capture Image'}
+                 </button>
+                 <button onClick={stopCamera} className="px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-all">
+                    Abort
+                 </button>
+              </div>
+           </div>
+        </div>
+      )}
     </UserLayout>
   );
 }
